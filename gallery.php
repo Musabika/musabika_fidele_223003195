@@ -13,12 +13,12 @@ $page = 'gallery';
     <!-- Navigation -->
     <nav>
         <ul>
-            <li><a href="index.php" class="<?php echo ($page == 'home') ? 'active' : ''; ?>">🏠 Home</a></li>
-            <li><a href="about.php" class="<?php echo ($page == 'about') ? 'active' : ''; ?>">ℹ️ About Us</a></li>
-            <li><a href="menu.php" class="<?php echo ($page == 'menu') ? 'active' : ''; ?>">🍽️ Menu</a></li>
-            <li><a href="gallery.php" class="<?php echo ($page == 'gallery') ? 'active' : ''; ?>">🖼️ Gallery</a></li>
-            <li><a href="order.php" class="<?php echo ($page == 'order') ? 'active' : ''; ?>">📝 Order</a></li>
-            <li><a href="contact.php" class="<?php echo ($page == 'contact') ? 'active' : ''; ?>">📞 Contact Us</a></li>
+            <li><a href="index.php" class="<?php echo ($page == 'home') ? 'active' : ''; ?>">Home</a></li>
+            <li><a href="about.php" class="<?php echo ($page == 'about') ? 'active' : ''; ?>">About Us</a></li>
+            <li><a href="menu.php" class="<?php echo ($page == 'menu') ? 'active' : ''; ?>">Menu</a></li>
+            <li><a href="gallery.php" class="<?php echo ($page == 'gallery') ? 'active' : ''; ?>">Gallery</a></li>
+            <li><a href="order.php" class="<?php echo ($page == 'order') ? 'active' : ''; ?>">Order</a></li>
+            <li><a href="contactus.php" class="<?php echo ($page == 'contact') ? 'active' : ''; ?>">Contact Us</a></li>
         </ul>
     </nav>
 
@@ -31,7 +31,7 @@ $page = 'gallery';
     <!-- Content -->
     <div class="container">
         <div class="content">
-            <h2>🖼️ Food & Beverage Gallery</h2>
+            <h2> Food & Beverage Gallery</h2>
             <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
                 Click on any image to place an order. Experience the deliciousness captured in every moment!
             </p>

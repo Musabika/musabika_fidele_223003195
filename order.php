@@ -15,12 +15,12 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
     <!-- Navigation -->
     <nav>
         <ul>
-            <li><a href="index.php" class="<?php echo ($page == 'home') ? 'active' : ''; ?>">🏠 Home</a></li>
-            <li><a href="about.php" class="<?php echo ($page == 'about') ? 'active' : ''; ?>">ℹ️ About Us</a></li>
-            <li><a href="menu.php" class="<?php echo ($page == 'menu') ? 'active' : ''; ?>">🍽️ Menu</a></li>
-            <li><a href="gallery.php" class="<?php echo ($page == 'gallery') ? 'active' : ''; ?>">🖼️ Gallery</a></li>
-            <li><a href="order.php" class="<?php echo ($page == 'order') ? 'active' : ''; ?>">📝 Order</a></li>
-            <li><a href="contact.php" class="<?php echo ($page == 'contact') ? 'active' : ''; ?>">📞 Contact Us</a></li>
+            <li><a href="index.php" class="<?php echo ($page == 'home') ? 'active' : ''; ?>">Home</a></li>
+            <li><a href="about.php" class="<?php echo ($page == 'about') ? 'active' : ''; ?>">About Us</a></li>
+            <li><a href="menu.php" class="<?php echo ($page == 'menu') ? 'active' : ''; ?>">Menu</a></li>
+            <li><a href="gallery.php" class="<?php echo ($page == 'gallery') ? 'active' : ''; ?>">Gallery</a></li>
+            <li><a href="order.php" class="<?php echo ($page == 'order') ? 'active' : ''; ?>">Order</a></li>
+            <li><a href="contactus.php" class="<?php echo ($page == 'contact') ? 'active' : ''; ?>">Contact Us</a></li>
         </ul>
     </nav>
 
@@ -33,7 +33,7 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
     <!-- Content -->
     <div class="container">
         <div class="content">
-            <h2>📝 Order Form</h2>
+            <h2> Order Form</h2>
 
             <?php if ($message): ?>
                 <div class="alert alert-success">
@@ -69,28 +69,28 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
                         <label for="menu">Select Menu Item *</label>
                         <select id="menu" name="menu" required onchange="updatePrice()">
                             <option value="">-- Select a Menu Item --</option>
-                            <optgroup label="🐟 Fish Dishes">
+                            <optgroup label=" Fish Dishes">
                                 <option value="Grilled Salmon Fillet - $28.99">Grilled Salmon Fillet - $28.99</option>
                                 <option value="Fried Crispy Fish - $18.99">Fried Crispy Fish - $18.99</option>
                                 <option value="Sea Bass Mediterranean - $32.99">Sea Bass Mediterranean - $32.99</option>
                                 <option value="Shrimp Scampi - $24.99">Shrimp Scampi - $24.99</option>
                                 <option value="Grilled Tuna Steak - $36.99">Grilled Tuna Steak - $36.99</option>
                             </optgroup>
-                            <optgroup label="🧃 Fresh Juices">
+                            <optgroup label=" Fresh Juices">
                                 <option value="Fresh Orange Juice - $4.99">Fresh Orange Juice - $4.99</option>
                                 <option value="Mango Lassi - $5.99">Mango Lassi - $5.99</option>
                                 <option value="Watermelon Smoothie - $5.49">Watermelon Smoothie - $5.49</option>
                                 <option value="Tropical Fruit Punch - $5.99">Tropical Fruit Punch - $5.99</option>
                                 <option value="Pomegranate Mocktail - $6.49">Pomegranate Mocktail - $6.49</option>
                             </optgroup>
-                            <optgroup label="☕ Drinks">
+                            <optgroup label=" Drinks">
                                 <option value="Iced Coffee - $4.49">Iced Coffee - $4.49</option>
                                 <option value="Cappuccino - $5.99">Cappuccino - $5.99</option>
                                 <option value="Hot Tea Selection - $3.99">Hot Tea Selection - $3.99</option>
                                 <option value="Sparkling Lemonade - $4.99">Sparkling Lemonade - $4.99</option>
                                 <option value="Hot Chocolate Deluxe - $5.49">Hot Chocolate Deluxe - $5.49</option>
                             </optgroup>
-                            <optgroup label="🍗 Other Items">
+                            <optgroup label=" Other Items">
                                 <option value="Grilled Chicken Breast - $22.99">Grilled Chicken Breast - $22.99</option>
                                 <option value="Lamb Chops - $34.99">Lamb Chops - $34.99</option>
                                 <option value="Beef Tenderloin - $42.99">Beef Tenderloin - $42.99</option>
@@ -120,7 +120,7 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
                         <textarea id="notes" name="notes" placeholder="Any special requests or dietary restrictions..."></textarea>
                     </div>
 
-                    <button type="submit">🛒 Place Order</button>
+                    <button type="submit"> Place Order</button>
                 </form>
 
                 <p style="text-align: center; margin-top: 1.5rem; color: #666; font-size: 0.95rem;">
