@@ -1,0 +1,91 @@
+<?php
+$page = 'about';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Royal Hotel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.php" class="<?php echo ($page == 'home') ? 'active' : ''; ?>">🏠 Home</a></li>
+            <li><a href="about.php" class="<?php echo ($page == 'about') ? 'active' : ''; ?>">ℹ️ About Us</a></li>
+            <li><a href="menu.php" class="<?php echo ($page == 'menu') ? 'active' : ''; ?>">🍽️ Menu</a></li>
+            <li><a href="gallery.php" class="<?php echo ($page == 'gallery') ? 'active' : ''; ?>">🖼️ Gallery</a></li>
+            <li><a href="order.php" class="<?php echo ($page == 'order') ? 'active' : ''; ?>">📝 Order</a></li>
+            <li><a href="contact.php" class="<?php echo ($page == 'contact') ? 'active' : ''; ?>">📞 Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>About Royal Hotel</h1>
+        <p>Our Story & Our Commitment to Excellence</p>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <div class="content">
+            <h2>Our Story</h2>
+            <div class="about-content">
+                <p>
+                    Royal Hotel has been a beacon of hospitality and culinary excellence for over 25 years. 
+                    Founded with a passion for delivering unforgettable dining experiences, we have grown to become 
+                    one of the most prestigious establishments in the region.
+                </p>
+
+                <h3>Our Mission</h3>
+                <p>
+                    Our mission is to provide exceptional service, authentic cuisine, and a welcoming atmosphere 
+                    that makes every guest feel like family. We believe in the power of good food to bring people together 
+                    and create lasting memories.
+                </p>
+
+                <h3>Our Vision</h3>
+                <p>
+                    To be the premier destination for fine dining and hospitality, recognized for our commitment to 
+                    quality, innovation, and customer satisfaction. We aspire to set new standards in the culinary industry 
+                    while maintaining our core values of excellence and integrity.
+                </p>
+
+                <h3>Our Values</h3>
+                <ul style="font-size: 1.1rem; line-height: 2;">
+                    <li><strong>Excellence:</strong> We strive for perfection in every aspect of our service</li>
+                    <li><strong>Integrity:</strong> We conduct our business with honesty and transparency</li>
+                    <li><strong>Innovation:</strong> We continuously improve and adapt to serve you better</li>
+                    <li><strong>Community:</strong> We believe in giving back and supporting our local community</li>
+                    <li><strong>Sustainability:</strong> We are committed to environmentally responsible practices</li>
+                </ul>
+
+                <h3>Why We're Different</h3>
+                <p>
+                    At Royal Hotel, we don't just serve food—we craft experiences. Our team of expert chefs 
+                    sources the freshest ingredients and combines traditional techniques with modern creativity. 
+                    Every dish is prepared with passion and attention to detail.
+                </p>
+
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                            color: white; padding: 2rem; border-radius: 10px; margin-top: 2rem; text-align: center;">
+                    <h3 style="color: white; border: none; margin-top: 0;">Join Our Community</h3>
+                    <p>Experience the Royal Hotel difference. Whether you're celebrating a special occasion or simply 
+                    enjoying great food, we're here to make your visit unforgettable.</p>
+                    <a href="order.php" style="display: inline-block; background: white; color: #667eea; 
+                    padding: 0.8rem 1.5rem; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 1rem;">
+                        Place Your Order Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Royal Hotel. All rights reserved. | Contact: info@royalhotel.com | Phone: +1-234-567-8900</p>
+    </footer>
+</body>
+</html>

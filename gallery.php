@@ -1,0 +1,137 @@
+<?php
+$page = 'gallery';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Royal Hotel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.php" class="<?php echo ($page == 'home') ? 'active' : ''; ?>">🏠 Home</a></li>
+            <li><a href="about.php" class="<?php echo ($page == 'about') ? 'active' : ''; ?>">ℹ️ About Us</a></li>
+            <li><a href="menu.php" class="<?php echo ($page == 'menu') ? 'active' : ''; ?>">🍽️ Menu</a></li>
+            <li><a href="gallery.php" class="<?php echo ($page == 'gallery') ? 'active' : ''; ?>">🖼️ Gallery</a></li>
+            <li><a href="order.php" class="<?php echo ($page == 'order') ? 'active' : ''; ?>">📝 Order</a></li>
+            <li><a href="contact.php" class="<?php echo ($page == 'contact') ? 'active' : ''; ?>">📞 Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Our Gallery</h1>
+        <p>Gorgeous Food & Drink Photography</p>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <div class="content">
+            <h2>🖼️ Food & Beverage Gallery</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
+                Click on any image to place an order. Experience the deliciousness captured in every moment!
+            </p>
+
+            <div class="gallery">
+                <!-- Image 1: Grilled Salmon -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1519708929214-67df266b5eff?w=400&h=300&fit=crop" alt="Grilled Salmon Fillet">
+                    <div class="gallery-overlay">
+                        <h3 style="margin: 0; font-size: 1.1rem;">Grilled Salmon</h3>
+                        <p style="margin: 0.5rem 0 0 0;">Premium Atlantic Salmon</p>
+                        <a href="order.php">Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Image 2: Fresh Juice -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600790217120-d52053ad51f8?w=400&h=300&fit=crop" alt="Fresh Fruit Juice">
+                    <div class="gallery-overlay">
+                        <h3 style="margin: 0; font-size: 1.1rem;">Fresh Juices</h3>
+                        <p style="margin: 0.5rem 0 0 0;">Tropical & Citrus Blends</p>
+                        <a href="order.php">Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Image 3: Beef Steak -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop" alt="Premium Beef Steak">
+                    <div class="gallery-overlay">
+                        <h3 style="margin: 0; font-size: 1.1rem;">Beef Steak</h3>
+                        <p style="margin: 0.5rem 0 0 0;">Prime Cut Perfection</p>
+                        <a href="order.php">Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Image 4: Coffee -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=400&h=300&fit=crop" alt="Artisan Coffee">
+                    <div class="gallery-overlay">
+                        <h3 style="margin: 0; font-size: 1.1rem;">Artisan Coffee</h3>
+                        <p style="margin: 0.5rem 0 0 0;">Premium Espresso Drinks</p>
+                        <a href="order.php">Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Image 5: Seafood Platter -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop" alt="Seafood Platter">
+                    <div class="gallery-overlay">
+                        <h3 style="margin: 0; font-size: 1.1rem;">Seafood Platter</h3>
+                        <p style="margin: 0.5rem 0 0 0;">Mixed Fresh Catches</p>
+                        <a href="order.php">Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Image 6: Dessert -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" alt="Gourmet Dessert">
+                    <div class="gallery-overlay">
+                        <h3 style="margin: 0; font-size: 1.1rem;">Gourmet Dessert</h3>
+                        <p style="margin: 0.5rem 0 0 0;">Sweet Indulgences</p>
+                        <a href="order.php">Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Image 7: Grilled Fish -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1580959359944-d5a63d2c3a46?w=400&h=300&fit=crop" alt="Grilled Fish">
+                    <div class="gallery-overlay">
+                        <h3 style="margin: 0; font-size: 1.1rem;">Grilled Fish</h3>
+                        <p style="margin: 0.5rem 0 0 0;">Fresh & Delicious</p>
+                        <a href="order.php">Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Image 8: Colorful Drinks -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1595329183121-42e6dfa814a2?w=400&h=300&fit=crop" alt="Colorful Beverages">
+                    <div class="gallery-overlay">
+                        <h3 style="margin: 0; font-size: 1.1rem;">Beverages</h3>
+                        <p style="margin: 0.5rem 0 0 0;">Refreshing Selections</p>
+                        <a href="order.php">Order Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; text-align: center; margin-top: 2rem;">
+                <h3 style="color: #667eea;">Tempted? Place Your Order Today!</h3>
+                <p style="font-size: 1.1rem;">All these delicious items are just a click away. Order now and enjoy premium food delivered fresh!</p>
+                <a href="order.php" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                color: white; padding: 0.8rem 2rem; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 1rem;">
+                    Place Your Order
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Royal Hotel. All rights reserved. | Contact: info@royalhotel.com | Phone: +1-234-567-8900</p>
+    </footer>
+</body>
+</html>
