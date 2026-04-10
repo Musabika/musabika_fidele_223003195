@@ -145,6 +145,45 @@ h3 {
     font-size: 1.2rem;
 }
 
+/* Action Buttons */
+.action-btn {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    margin: 0.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.gallery-btn {
+    background: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+.gallery-btn:hover {
+    background: white;
+    color: #28a745;
+    border-color: #28a745;
+    transform: translateY(-2px);
+}
+
+.order-btn {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.order-btn:hover {
+    background: white;
+    color: #007bff;
+    border-color: #007bff;
+    transform: translateY(-2px);
+}
+
 /* Gallery */
 .gallery {
     display: grid;
@@ -372,5 +411,29 @@ footer p {
 
     .gallery-item img {
         height: 200px;
+    }
+
+    /* Menu table responsive */
+    .menu-table {
+        font-size: 0.9rem;
+    }
+
+    .menu-table th,
+    .menu-table td {
+        padding: 0.8rem 0.6rem;
+    }
+
+    .action-btn {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+        margin: 0.1rem;
+        display: block;
+        text-align: center;
+    }
+
+    .menu-table td:last-child {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
     }
 }
