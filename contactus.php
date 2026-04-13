@@ -1,5 +1,30 @@
 <?php
+
+
+$conn = mysqli_connect("localhost","root","","hotel_db") or die("error to connect database");
+
 $page = 'contact';
+
+$message = isset($_GET['message']) ? htmlspecialchars($_GET['message']) : '';
+$error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
+
+
+if (isset($_POST["contact"])) {
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $phone = $_POST["phone"];
+    $subject = $_POST["subject"];
+    $message = $_POST["message"];
+
+$contact_message = mysqli_query($conn,"INSERT INTO contact VALUES('','$name','$email','$phone','$subject','$message')");
+if ($contact_message) {
+    $message = "your message received well!!";
+}
+else{
+    $error = "there is error occured. please try again".mysqli_error($conn);
+}
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,15 +35,15 @@ $page = 'contact';
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
+
     <nav>
         <ul>
-            <li><a href="index.php" class="<?php echo ($page == 'home') ? 'active' : ''; ?>">Home</a></li>
-            <li><a href="about.php" class="<?php echo ($page == 'about') ? 'active' : ''; ?>">About Us</a></li>
-            <li><a href="menu.php" class="<?php echo ($page == 'menu') ? 'active' : ''; ?>">Menu</a></li>
-            <li><a href="gallery.php" class="<?php echo ($page == 'gallery') ? 'active' : ''; ?>">Gallery</a></li>
-            <li><a href="order.php" class="<?php echo ($page == 'order') ? 'active' : ''; ?>">Order</a></li>
-            <li><a href="contactus.php" class="<?php echo ($page == 'contact') ? 'active' : ''; ?>">Contact Us</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="about.php" >About Us</a></li>
+            <li><a href="menu.php" >Menu</a></li>
+            <li><a href="gallery.php" >Gallery</a></li>
+            <li><a href="order.php" >Order</a></li>
+            <li><a href="contactus.php" >Contact Us</a></li>
         </ul>
     </nav>
 
@@ -31,21 +56,32 @@ $page = 'contact';
     <!-- Content -->
     <div class="container">
         <div class="content">
+            <?php if ($message): ?>
+                <div class="alert alert-success">
+                    <?php echo $message; ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if ($error): ?>
+                <div class="alert alert-error">
+                    ✗ <?php echo $error; ?>
+                </div>
+            <?php endif; ?>
             <h2>Contact Information</h2>
 
             <div class="contact-grid">
                 <div class="contact-item">
                     <h3>Phone</h3>
-                    <p>+1-234-567-8900</p>
+                    <h3>+25 0788 236 249>
                     <p>Mon-Fri: 9:00 AM - 10:00 PM</p>
                     <p>Sat-Sun: 10:00 AM - 11:00 PM</p>
                 </div>
 
                 <div class="contact-item">
                     <h3>Address</h3>
-                    <p>123 Royal Street</p>
-                    <p>Downtown District</p>
-                    <p>New York, NY 10001</p>
+                    <p>ss1 butare</p>
+                    <p>huye District</p>
+                    <p>mukoni center</p>
                 </div>
 
                 <div class="contact-item">
@@ -80,7 +116,7 @@ $page = 'contact';
 
             <div class="contact-form-section">
                 <h2>Send us a Message</h2>
-                <form id="contactForm" onsubmit="return validateContactForm()">
+                <form id="contactForm" method="POST">
                     <div class="form-group">
                         <label for="name">Full Name *</label>
                         <input type="text" id="name" name="name" required>
@@ -113,23 +149,17 @@ $page = 'contact';
                         <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
 
-                    <button type="submit" class="submit-btn">Send Message</button>
+                    <button type="submit" class="submit-btn" name = "contact">Send Message</button>
                 </form>
             </div>
 
-            <div class="map-section">
-                <h2>Find Us</h2>
-                <div class="map-placeholder">
-                    <p>Interactive Map Coming Soon</p>
-                    <p>123 Royal Street, Downtown District, New York, NY 10001</p>
-                </div>
-            </div>
+            
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Royal Hotel. All rights reserved. | Contact: info@royalhotel.com | Phone: +1-234-567-8900</p>
+        <p>&copy; 2026 Royal Hotel. All rights reserved.</p>
     </footer>
 
     <script>
@@ -159,23 +189,8 @@ $page = 'contact';
                 return false;
             }
 
-            // Store in localStorage
-            const contactData = {
-                name: name,
-                email: email,
-                phone: document.getElementById('phone').value,
-                subject: document.getElementById('subject').value,
-                message: message,
-                timestamp: new Date().toISOString()
-            };
+        
 
-            let messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
-            messages.push(contactData);
-            localStorage.setItem('contactMessages', JSON.stringify(messages));
-
-            alert('Thank you for your message! We will get back to you soon.');
-            document.getElementById('contactForm').reset();
-            return false;
         }
     </script>
 </body>

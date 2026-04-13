@@ -14,12 +14,12 @@ $page = 'home';
     <!-- Navigation -->
     <nav>
         <ul>
-            <li><a href="index.php" class="<?php echo ($page == 'home') ? 'active' : ''; ?>">Home</a></li>
-            <li><a href="about.php" class="<?php echo ($page == 'about') ? 'active' : ''; ?>">About Us</a></li>
-            <li><a href="menu.php" class="<?php echo ($page == 'menu') ? 'active' : ''; ?>">Menu</a></li>
-            <li><a href="gallery.php" class="<?php echo ($page == 'gallery') ? 'active' : ''; ?>">Gallery</a></li>
-            <li><a href="order.php" class="<?php echo ($page == 'order') ? 'active' : ''; ?>">Order</a></li>
-            <li><a href="contactus.php" class="<?php echo ($page == 'contact') ? 'active' : ''; ?>">Contact Us</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="about.php" >About Us</a></li>
+            <li><a href="menu.php" >Menu</a></li>
+            <li><a href="gallery.php" >Gallery</a></li>
+            <li><a href="order.php" >Order</a></li>
+            <li><a href="contactus.php" >Contact Us</a></li>
         </ul>
     </nav>
 
@@ -66,13 +66,16 @@ $page = 'home';
                     <li><strong>Trusted reliability</strong> for dine-in and online ordering</li>
                 </ul>
             </div>
-            <div class="split-image"></div>
+            <div class="split-image">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop" alt="Elegant dining experience at Royal Hotel">    
+                
+            </div>
         </section>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Royal Hotel. All rights reserved. | Contact: info@royalhotel.com | Phone: +1-234-567-8900</p>
+        <p>&copy; 2026 Royal Hotel. All rights reserved. 
     </footer>
 </body>
 </html>

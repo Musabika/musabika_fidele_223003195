@@ -1,7 +1,34 @@
 <?php
+// $name;$email;$phone;$menu;$address;$date = "";
+
+$conn = mysqli_connect("localhost","root","","hotel_db") or die("error to connect database");
+
 $page = 'order';
+
 $message = isset($_GET['message']) ? htmlspecialchars($_GET['message']) : '';
 $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
+ 
+
+if (isset($_POST["order"])) {
+    
+$name = $_POST["fullname"];
+$email = $_POST["email"];
+$phone = $_POST["phone"];
+$menu = $_POST["menu"];
+$address = $_POST["address"];
+$date = $_POST["dates"];
+
+
+$insert_order = mysqli_query($conn,"INSERT INTO ordered VALUES('','$name','$email','$phone','$menu','$address','$date')");
+if ($insert_order) {
+    $message = "your order is recorded well see in your account";
+}
+else{
+    $error = "there is error occured in recording of your order";
+}
+
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,12 +42,12 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
     <!-- Navigation -->
     <nav>
         <ul>
-            <li><a href="index.php" class="<?php echo ($page == 'home') ? 'active' : ''; ?>">Home</a></li>
-            <li><a href="about.php" class="<?php echo ($page == 'about') ? 'active' : ''; ?>">About Us</a></li>
-            <li><a href="menu.php" class="<?php echo ($page == 'menu') ? 'active' : ''; ?>">Menu</a></li>
-            <li><a href="gallery.php" class="<?php echo ($page == 'gallery') ? 'active' : ''; ?>">Gallery</a></li>
-            <li><a href="order.php" class="<?php echo ($page == 'order') ? 'active' : ''; ?>">Order</a></li>
-            <li><a href="contactus.php" class="<?php echo ($page == 'contact') ? 'active' : ''; ?>">Contact Us</a></li>
+            <li><a href="index.php" >Home</a></li>
+            <li><a href="about.php" >About Us</a></li>
+            <li><a href="menu.php">Menu</a></li>
+            <li><a href="gallery.php" >Gallery</a></li>
+            <li><a href="order.php" >Order</a></li>
+            <li><a href="contactus.php" >Contact Us</a></li>
         </ul>
     </nav>
 
@@ -37,7 +64,7 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
 
             <?php if ($message): ?>
                 <div class="alert alert-success">
-                    ✓ <?php echo $message; ?>
+                    <?php echo $message; ?>
                 </div>
             <?php endif; ?>
 
@@ -48,7 +75,7 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
             <?php endif; ?>
 
             <div class="form-container">
-                <form method="POST" action="process_order.php" onsubmit="return validateForm()">
+                <form method="POST"  onsubmit="return validateForm()">
                     
                     <div class="form-group">
                         <label for="fullname">Full Name *</label>
@@ -56,71 +83,46 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Email Address *</label>
+                        <label for="email">Email *</label>
                         <input type="email" id="email" name="email" required placeholder="Enter your email">
                     </div>
 
                     <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number (e.g., +1-234-567-8900)">
+                        <label for="phone">Phone *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
                     </div>
 
                     <div class="form-group">
-                        <label for="menu">Select Menu Item *</label>
+                        <label for="menu">Select Menu *</label>
                         <select id="menu" name="menu" required onchange="updatePrice()">
                             <option value="">-- Select a Menu Item --</option>
                             <optgroup label=" Fish Dishes">
                                 <option value="Grilled Salmon Fillet - $28.99">Grilled Salmon Fillet - $28.99</option>
-                                <option value="Fried Crispy Fish - $18.99">Fried Crispy Fish - $18.99</option>
-                                <option value="Sea Bass Mediterranean - $32.99">Sea Bass Mediterranean - $32.99</option>
-                                <option value="Shrimp Scampi - $24.99">Shrimp Scampi - $24.99</option>
-                                <option value="Grilled Tuna Steak - $36.99">Grilled Tuna Steak - $36.99</option>
                             </optgroup>
                             <optgroup label=" Fresh Juices">
                                 <option value="Fresh Orange Juice - $4.99">Fresh Orange Juice - $4.99</option>
-                                <option value="Mango Lassi - $5.99">Mango Lassi - $5.99</option>
-                                <option value="Watermelon Smoothie - $5.49">Watermelon Smoothie - $5.49</option>
-                                <option value="Tropical Fruit Punch - $5.99">Tropical Fruit Punch - $5.99</option>
-                                <option value="Pomegranate Mocktail - $6.49">Pomegranate Mocktail - $6.49</option>
-                            </optgroup>
                             <optgroup label=" Drinks">
                                 <option value="Iced Coffee - $4.49">Iced Coffee - $4.49</option>
-                                <option value="Cappuccino - $5.99">Cappuccino - $5.99</option>
-                                <option value="Hot Tea Selection - $3.99">Hot Tea Selection - $3.99</option>
-                                <option value="Sparkling Lemonade - $4.99">Sparkling Lemonade - $4.99</option>
-                                <option value="Hot Chocolate Deluxe - $5.49">Hot Chocolate Deluxe - $5.49</option>
                             </optgroup>
                             <optgroup label=" Other Items">
                                 <option value="Grilled Chicken Breast - $22.99">Grilled Chicken Breast - $22.99</option>
-                                <option value="Lamb Chops - $34.99">Lamb Chops - $34.99</option>
-                                <option value="Beef Tenderloin - $42.99">Beef Tenderloin - $42.99</option>
-                                <option value="Vegetable Medley - $16.99">Vegetable Medley - $16.99</option>
-                                <option value="Chocolate Mousse - $8.99">Chocolate Mousse - $8.99</option>
                             </optgroup>
                         </select>
                     </div>
 
+                  
                     <div class="form-group">
-                        <label for="quantity">Quantity *</label>
-                        <input type="number" id="quantity" name="quantity" min="1" max="50" value="1" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="address">Delivery Address *</label>
+                        <label for="address"> Address *</label>
                         <input type="text" id="address" name="address" required placeholder="Enter your full delivery address">
                     </div>
 
                     <div class="form-group">
-                        <label for="date">Preferred Delivery Date *</label>
-                        <input type="date" id="date" name="date" required>
+                        <label for="date">Date *</label>
+                        <input type="date" id="date" name="dates" required>
                     </div>
 
-                    <div class="form-group">
-                        <label for="notes">Special Instructions (Optional)</label>
-                        <textarea id="notes" name="notes" placeholder="Any special requests or dietary restrictions..."></textarea>
-                    </div>
 
-                    <button type="submit"> Place Order</button>
+                    <button type="submit" name = "order"> Place Order</button>
                 </form>
 
                 <p style="text-align: center; margin-top: 1.5rem; color: #666; font-size: 0.95rem;">
@@ -148,52 +150,9 @@ $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Royal Hotel. All rights reserved. | Contact: info@royalhotel.com | Phone: +1-234-567-8900</p>
+        <p>&copy; 2026 Royal Hotel. All rights reserved. </p>
     </footer>
 
-    <script>
-        // Set minimum date to today
-        document.getElementById('date').min = new Date().toISOString().split('T')[0];
-
-        function validateForm() {
-            const menu = document.getElementById('menu').value;
-            const fullname = document.getElementById('fullname').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const address = document.getElementById('address').value;
-            const date = document.getElementById('date').value;
-
-            if (!menu) {
-                alert('Please select a menu item');
-                return false;
-            }
-            if (fullname.trim().length < 2) {
-                alert('Please enter a valid full name');
-                return false;
-            }
-            if (!email.includes('@')) {
-                alert('Please enter a valid email');
-                return false;
-            }
-            if (phone.trim().length < 10) {
-                alert('Please enter a valid phone number');
-                return false;
-            }
-            if (address.trim().length < 5) {
-                alert('Please enter a valid delivery address');
-                return false;
-            }
-            if (!date) {
-                alert('Please select a delivery date');
-                return false;
-            }
-            return true;
-        }
-
-        function updatePrice() {
-            // This function can be extended to show price updates
-            console.log('Menu updated');
-        }
-    </script>
+    
 </body>
 </html>
