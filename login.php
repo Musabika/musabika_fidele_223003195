@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <form method="POST" class="auth-form">
                     <div class="form-group">
                         <label for="email">Email address</label>
-                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        <input type="email" id="email" name="email" placeholder="" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Go to Dashboard</button>
                 </form>
