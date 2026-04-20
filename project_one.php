@@ -8,26 +8,30 @@ $loggedIn = !empty($_SESSION['customer_email']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Royal Hotel - Welcome</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <ul>
-            <li><a href="index.php" class="<?php echo ($page == 'home') ? 'active' : ''; ?>">Home</a></li>
-            <li><a href="about.php" class="<?php echo ($page == 'about') ? 'active' : ''; ?>">About Us</a></li>
-            <li><a href="menu.php" class="<?php echo ($page == 'menu') ? 'active' : ''; ?>">Menu</a></li>
-            <li><a href="gallery.php" class="<?php echo ($page == 'gallery') ? 'active' : ''; ?>">Gallery</a></li>
-            <li><a href="order.php" class="<?php echo ($page == 'order') ? 'active' : ''; ?>">Order</a></li>
-            <li><a href="contactus.php" class="<?php echo ($page == 'contact') ? 'active' : ''; ?>">Contact Us</a></li>
+            <li><a href="../index.php" class="<?php echo ($page == 'home') ? 'active' : ''; ?>">Home</a></li>
+            <li><a href="../about.php" class="<?php echo ($page == 'about') ? 'active' : ''; ?>">About Us</a></li>
+            <li><a href="../menu.php" class="<?php echo ($page == 'menu') ? 'active' : ''; ?>">Menu</a></li>
+            <li><a href="../gallery.php" class="<?php echo ($page == 'gallery') ? 'active' : ''; ?>">Gallery</a></li>
+            <li><a href="../order.php" class="<?php echo ($page == 'order') ? 'active' : ''; ?>">Order</a></li>
+            <li><a href="../contactus.php" class="<?php echo ($page == 'contact') ? 'active' : ''; ?>">Contact Us</a></li>
             <?php if ($loggedIn): ?>
-                <li><a href="customer_dashboard.php" class="<?php echo ($page == 'dashboard') ? 'active' : ''; ?>">Dashboard</a></li>
-                <li><a href="logout.php" class="nav-button">Logout</a></li>
+                <li><a href="../customer_dashboard.php" class="<?php echo ($page == 'dashboard') ? 'active' : ''; ?>">Dashboard</a></li>
+                <li><a href="../logout.php" class="nav-button">Logout</a></li>
             <?php else: ?>
-                <li><a href="login.php" class="nav-button">Login</a></li>
+                <li><a href="../login.php" class="nav-button">Login</a></li>
             <?php endif; ?>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-inner">
             <div class="hero-copy">
@@ -35,8 +39,8 @@ $loggedIn = !empty($_SESSION['customer_email']);
                 <h1>Exclusive dining and effortless online service</h1>
                 <p class="hero-text">Enjoy seasonal menus crafted by expert chefs, elegant ambiance, and a seamless ordering experience for every visit.</p>
                 <div class="hero-actions">
-                    <a href="menu.php" class="btn btn-primary">Explore Menu</a>
-                    <a href="order.php" class="btn btn-secondary">Order Now</a>
+                    <a href="../menu.php" class="btn btn-primary">Explore Menu</a>
+                    <a href="../order.php" class="btn btn-secondary">Order Now</a>
                 </div>
             </div>
         </div>

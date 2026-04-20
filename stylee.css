@@ -1,0 +1,53 @@
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ddd;
+}
+
+/* Header */
+.header{
+    background: blue;
+    padding: 10px;
+}
+
+.header input{
+    width: 140px;
+}
+
+/* Layout container */
+.container{
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar{
+    width: 200px;
+    background: yellow;
+    min-height: 640px;
+    padding: 20px;
+}
+
+.sidebar ul{
+    list-style-type: disc;
+}
+
+.sidebar a{
+    
+    color: blue;
+}
+
+/* Content */
+.content{
+    padding: 30px;
+    flex: 1;
+}
+
+.content h2{
+    text-align: center;
+}
+
+.content img{
+    width: 300px;
+    display: block;
+    margin-bottom: 40px;
+}

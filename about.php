@@ -1,5 +1,7 @@
 <?php
+session_start();
 $page = 'about';
+$loggedIn = !empty($_SESSION['customer_email']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,16 +21,12 @@ $page = 'about';
             <li><a href="gallery.php" class="<?php echo ($page == 'gallery') ? 'active' : ''; ?>">Gallery</a></li>
             <li><a href="order.php" class="<?php echo ($page == 'order') ? 'active' : ''; ?>">Order</a></li>
             <li><a href="contactus.php" class="<?php echo ($page == 'contact') ? 'active' : ''; ?>">Contact Us</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <div class="hero">
-        <h1>About Royal Hotel</h1>
-        <p>Our Story & Our Commitment to Excellence</p>
-    </div>
-
-    <!-- Content -->
+            <?php if ($loggedIn): ?>
+                <li><a href="customer_dashboard.php" class="<?php echo ($page == 'dashboard') ? 'active' : ''; ?>">Dashboard</a></li>
+                <li><a href="logout.php" class="nav-button">Logout</a></li>
+            <?php else: ?>
+                <li><a href="login.php" class="nav-button">Login</a></li>
+            <?php endif; ?>
     <div class="container">
         <div class="content">
             <h2>Our Story</h2>

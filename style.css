@@ -50,7 +50,7 @@ nav a.active {
 
 /* Header/Hero Section */
 .hero {
-    background: url('uploads/bg2.jpg') no-repeat center center;
+    /* background: url('uploads/bg2.jpg') no-repeat center center; */
     background-size: cover;
     color: white;
     text-align: center;
@@ -63,7 +63,7 @@ nav a.active {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.2)), url('uploads/Heaven-restaurant-terrace-2.jpg');
+    /* background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.2)), url('uploads/Heaven-restaurant-terrace-2.jpg'); */
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -233,7 +233,7 @@ nav a.active {
 .split-image {
     min-height: 420px;
     border-radius: 20px;
-    background: linear-gradient(180deg, rgba(102, 126, 234, 0.95), rgba(118, 75, 162, 0.95)), url('https://images.unsplash.com/photo-1504674900927-8498dd3e07ff?w=900&h=900&fit=crop');
+    /* background: linear-gradient(180deg, rgba(102, 126, 234, 0.95), rgba(118, 75, 162, 0.95)), url('https://images.unsplash.com/photo-1504674900927-8498dd3e07ff?w=900&h=900&fit=crop'); */
     background-size: cover;
     background-position: center;
     position: relative;

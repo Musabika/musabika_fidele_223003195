@@ -1,9 +1,10 @@
 <?php
-
+session_start();
 
 $conn = mysqli_connect("localhost","root","","hotel_db") or die("error to connect database");
 
 $page = 'contact';
+$loggedIn = !empty($_SESSION['customer_email']);
 
 $message = isset($_GET['message']) ? htmlspecialchars($_GET['message']) : '';
 $error = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
@@ -38,12 +39,18 @@ else{
 
     <nav>
         <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="about.php" >About Us</a></li>
-            <li><a href="menu.php" >Menu</a></li>
-            <li><a href="gallery.php" >Gallery</a></li>
-            <li><a href="order.php" >Order</a></li>
-            <li><a href="contactus.php" >Contact Us</a></li>
+            <li><a href="index.php" class="<?php echo ($page == 'home') ? 'active' : ''; ?>">Home</a></li>
+            <li><a href="about.php" class="<?php echo ($page == 'about') ? 'active' : ''; ?>">About Us</a></li>
+            <li><a href="menu.php" class="<?php echo ($page == 'menu') ? 'active' : ''; ?>">Menu</a></li>
+            <li><a href="gallery.php" class="<?php echo ($page == 'gallery') ? 'active' : ''; ?>">Gallery</a></li>
+            <li><a href="order.php" class="<?php echo ($page == 'order') ? 'active' : ''; ?>">Order</a></li>
+            <li><a href="contactus.php" class="<?php echo ($page == 'contact') ? 'active' : ''; ?>">Contact Us</a></li>
+            <?php if ($loggedIn): ?>
+                <li><a href="customer_dashboard.php" class="<?php echo ($page == 'dashboard') ? 'active' : ''; ?>">Dashboard</a></li>
+                <li><a href="logout.php" class="nav-button">Logout</a></li>
+            <?php else: ?>
+                <li><a href="login.php" class="nav-button">Login</a></li>
+            <?php endif; ?>
         </ul>
     </nav>
 
